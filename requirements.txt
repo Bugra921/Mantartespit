@@ -8,3 +8,4 @@ tensorflow
 uvicorn
 torch
 torchvision
+twilio
