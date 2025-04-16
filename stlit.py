@@ -46,7 +46,7 @@ model.load_state_dict(torch.load('resnet9_model.pth', map_location=torch.device(
 model.eval()
 
 # Sınıf isimleri
-class_names = ['edible mushroom sporocarp', 'edible sporocarp', 'poisonous mushroom sporocarp', 'poisonous sporocarp']
+class_names = ['Yenilebilir', 'Yenilebilir', 'Zehirli', 'Zehirli']
 
 # Görüntü ön işleme fonksiyonu
 def preprocess_image(img):
@@ -72,7 +72,7 @@ def predict_image(img):
 st.title("Zehirli Mantar Tespit Uygulaması")
 
 camera_input = st.camera_input('Kameradan resim çek')
-gallery_input = st.file_uploader('VEYA Fasulye Fotoğrafı Ekleyin', accept_multiple_files=False)
+gallery_input = st.file_uploader('VEYA Mantar Fotoğrafı Ekleyin', accept_multiple_files=False)
 
 if camera_input is not None:
     img_bytes = camera_input.getvalue()
@@ -81,7 +81,7 @@ if camera_input is not None:
 
     predicted_class, confidence = predict_image(img_cv2)
     st.write(f"Tahmin Edilen Sınıf: {class_names[predicted_class]}")
-    st.write(f"İnanılırlık Yüzdesi: {confidence*100:.2f}%")
+    st.write(f"Tahmin Yüzdesi: {confidence*100:.2f}%")
 
 elif gallery_input is not None:
     img_bytes = gallery_input.getvalue()
