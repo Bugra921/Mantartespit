@@ -69,7 +69,7 @@ def predict_image(img):
     return predicted.item(), confidence.item()
 image="bilsemlogo.png"
 # Streamlit arayüzü
-st.html(<h1>Zehirli Mantar Tespit Uygulaması</h1>')
+st.html("<h1>Zehirli Mantar Tespit Uygulaması</h1>")
 st.image(image, caption=None, width=100, clamp=False, channels="RGB", output_format="auto", use_container_width=False)
 
 
