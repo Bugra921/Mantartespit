@@ -70,7 +70,7 @@ def predict_image(img):
 image="bilsemlogo.png"
 # Streamlit arayüzü
 st.html("<h1 align='center'>Zehirli Mantar Tespit Uygulaması</h1>")
-st.image(image, caption=None, width=100, clamp=False, channels="RGB", output_format="auto", use_container_width=False)
+st.image(image, caption=None, width=100, clamp=False, channels="RGB", output_format="auto", use_container_width=True)
 
 
 
