@@ -67,9 +67,9 @@ def predict_image(img):
         probabilities = torch.nn.functional.softmax(outputs, dim=1)
         confidence, predicted = torch.max(probabilities, 1)
     return predicted.item(), confidence.item()
-
+image="bilsemlogo.png"
 # Streamlit arayüzü
-st.image("bilsemlogo.png")
+st.image(image, caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto", *, use_container_width=False)
 st.title("Zehirli Mantar Tespit Uygulaması")
 
 camera_input = st.camera_input('Kameradan resim çek')
