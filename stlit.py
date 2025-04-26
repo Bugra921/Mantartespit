@@ -69,8 +69,10 @@ def predict_image(img):
     return predicted.item(), confidence.item()
 image="bilsemlogo.png"
 # Streamlit arayüzü
-st.image(image, caption=None, width=100, clamp=False, channels="RGB", output_format="auto", use_container_width=False)
-st.title("Zehirli Mantar Tespit Uygulaması")
+st.html(<h1>st.image(image, caption=None, width=100, clamp=False, channels="RGB", output_format="auto", use_container_width=False)
+Zehirli Mantar Tespit Uygulaması</h1>)
+
+
 
 camera_input = st.camera_input('Kameradan resim çek')
 gallery_input = st.file_uploader('VEYA Mantar Fotoğrafı Ekleyin', accept_multiple_files=False)
